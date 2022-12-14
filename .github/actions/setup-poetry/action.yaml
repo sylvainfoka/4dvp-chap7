@@ -1,0 +1,15 @@
+name: "setup-poetry"
+runs: 
+  using: composite
+  steps: 
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - run: pip install poetry 
+      shell: bash
+      #configuration du cache
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        cache: poetry  
+  
